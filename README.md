@@ -8,7 +8,7 @@ This Terraform module creates and manages a GitHub Repository.
 | Name | Version |
 |------|---------|
 | terraform | >= 1.1 |
-| github | ~> 5.3.0 |
+| github | ~> 5.7.0 |
 
 ## Modules
 
