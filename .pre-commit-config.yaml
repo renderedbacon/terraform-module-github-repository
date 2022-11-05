@@ -1,0 +1,40 @@
+repos:
+  - repo: https://github.com/renderedbacon/pre-commit-terraform-modules
+    rev: v1.0.3
+    hooks:
+      - id: update-tf-docs
+  - repo: https://github.com/bridgecrewio/checkov
+    rev: 2.1.269
+    hooks:
+      - id: checkov
+        name: checkov
+        args:
+          - -ogithub_failed_only
+  - repo: https://github.com/tekwizely/pre-commit-golang
+    rev: v1.0.0-beta.5
+    hooks:
+      - id: go-test-repo-mod
+        name: terratest unit tests
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.76.0
+    hooks:
+      - id: terraform_fmt
+        name: terraform fmt
+  - repo: https://github.com/terraform-docs/terraform-docs
+    rev: v0.16.0
+    hooks:
+      - id: terraform-docs-docker
+        name: terraform docs root
+        args:
+          - --config
+          - .terraform-docs.yaml
+          - .
+        pass_filenames: false
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+        args:
+          - --markdown-linebreak-ext=md
+      - id: end-of-file-fixer
