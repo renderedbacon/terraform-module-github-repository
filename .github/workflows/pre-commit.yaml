@@ -38,6 +38,6 @@ jobs:
           fi
 
       - name: Pre-commit Terraform ${{ steps['min-max'].outputs.maxVersion }}
-        uses: clowdhaus/terraform-composite-actions/pre-commit@v1.6.0
+        uses: clowdhaus/terraform-composite-actions/pre-commit@v1.8.0
         with:
           terraform-version: ${{ steps['min-max'].outputs.maxVersion }}
