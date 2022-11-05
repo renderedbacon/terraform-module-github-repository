@@ -18,7 +18,7 @@ jobs:
 
       - name: Terraform Min/Max Versions
         id: min-max
-        uses: clowdhaus/terraform-min-max@v1.1.1
+        uses: clowdhaus/terraform-min-max@v1.2.0
 
       - name: Install Python 3.10
         uses: actions/setup-python@v4
