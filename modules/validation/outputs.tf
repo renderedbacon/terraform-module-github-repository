@@ -48,7 +48,7 @@ output "branches" {
   value       = var.branches
 }
 
-output "create_value_branch" {
+output "create_default_branch" {
   description = "(Optional) This can only be set after a repository has already been created and the branch has been created in the repository.  By default the default branch will be created when the repository is created. (Default: `true`)"
   value       = var.create_default_branch
 }
