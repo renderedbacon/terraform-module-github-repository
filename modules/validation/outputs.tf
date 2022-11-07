@@ -35,7 +35,7 @@ output "archived" {
 
 output "auto_init" {
   description = "(Optional) Whether or not to produce an initial commit in the repository. (Default: `true`)"
-  value       = toset(var.auto_init)
+  value       = var.auto_init
 }
 
 output "branch_protections" {
@@ -144,8 +144,8 @@ output "template" {
 }
 
 output "topics" {
-  description = "(Optional) The list of topics of the repository.  (Default: `[]`)"
-  value       = var.topics
+  description = "(Optional) The set of topics of the repository.  (Default: `[]`)"
+  value       = toset(var.topics)
 }
 
 output "visibility" {
