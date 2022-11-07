@@ -10,12 +10,13 @@ variable "name" {
 variable "defaults" {
   description = "(Optional) Defaults for optional repository settings."
   type = object({
-    allow_auto_merge   = optional(bool, false)
-    allow_merge_commit = optional(bool, true)
-    allow_rebase_merge = optional(bool, false)
-    allow_squash_merge = optional(bool, false)
-    archive_on_destroy = optional(bool, true)
-    auto_init          = optional(bool, true)
+    allow_auto_merge    = optional(bool, false)
+    allow_merge_commit  = optional(bool, true)
+    allow_rebase_merge  = optional(bool, false)
+    allow_squash_merge  = optional(bool, false)
+    allow_update_branch = optional(bool, true)
+    archive_on_destroy  = optional(bool, true)
+    auto_init           = optional(bool, true)
     branch_protections = optional(
       list(
         object({
@@ -132,6 +133,12 @@ variable "allow_rebase_merge" {
 
 variable "allow_squash_merge" {
   description = "(Optional) Set to true to enable squash merges on the repository. (Default: `false`)"
+  type        = bool
+  default     = null
+}
+
+variable "allow_update_branch" {
+  description = "(Optional) Set to true to always suggest updating pull request branches."
   type        = bool
   default     = null
 }

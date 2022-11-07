@@ -18,6 +18,11 @@ output "allow_squash_merge" {
   value       = var.allow_squash_merge
 }
 
+output "allow_update_branch" {
+  description = "(Optional) Set to true to always suggest updating pull request branches. (Default: `true`)"
+  value       = var.allow_update_branch
+}
+
 output "archive_on_destroy" {
   description = "(Optional) Set to true to enable archiving on delete. (Default: `true`)."
   value       = var.archive_on_destroy
@@ -30,7 +35,7 @@ output "archived" {
 
 output "auto_init" {
   description = "(Optional) Whether or not to produce an initial commit in the repository. (Default: `true`)"
-  value       = var.auto_init
+  value       = toset(var.auto_init)
 }
 
 output "branch_protections" {

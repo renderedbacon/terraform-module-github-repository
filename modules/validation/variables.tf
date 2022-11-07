@@ -22,6 +22,12 @@ variable "allow_squash_merge" {
   default     = false
 }
 
+variable "allow_update_branch" {
+  description = "(Optional) Set to true to always suggest updating pull request branches. (Default: `true`)"
+  type        = bool
+  default     = true
+}
+
 variable "archive_on_destroy" {
   type        = string
   description = "(Optional) Set to true to enable archiving on delete. (Default: `true`)."
@@ -254,9 +260,9 @@ variable "template" {
 }
 
 variable "topics" {
-  description = "(Optional) The list of topics of the repository.  (Default: `[]`)"
-  type        = list(string)
-  default     = []
+  description = "(Optional) The set of topics of the repository.  (Default: `toset([])`)"
+  type        = set(string)
+  default     = toset([])
 }
 
 variable "visibility" {

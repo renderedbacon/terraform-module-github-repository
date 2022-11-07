@@ -5,6 +5,7 @@ module "validation" {
   allow_merge_commit                      = var.allow_merge_commit != null ? var.allow_merge_commit : var.defaults.allow_merge_commit
   allow_rebase_merge                      = var.allow_rebase_merge != null ? var.allow_rebase_merge : var.defaults.allow_rebase_merge
   allow_squash_merge                      = var.allow_squash_merge != null ? var.allow_squash_merge : var.defaults.allow_squash_merge
+  allow_update_branch                     = var.allow_update_branch != null ? var.allow_update_branch : var.defaults.allow_update_branch
   archive_on_destroy                      = var.archive_on_destroy != null ? var.archive_on_destroy : var.defaults.archive_on_destroy
   auto_init                               = var.auto_init != null ? var.auto_init : var.defaults.auto_init
   branch_protections                      = var.branch_protections != null ? var.branch_protections : var.defaults.branch_protections

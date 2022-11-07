@@ -11,6 +11,12 @@ The following requirements are needed by this module:
 
 - github (~> 5.7.0)
 
+## Providers
+
+The following providers are used by this module:
+
+- github (~> 5.7.0)
+
 ## Modules
 
 The following Modules are called:
@@ -20,6 +26,16 @@ The following Modules are called:
 Source: ./modules/validation
 
 Version:
+
+## Resources
+
+The following resources are used by this module:
+
+- [github_branch.branches](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) (resource)
+- [github_branch.default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch) (resource)
+- [github_branch_default.instance](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default) (resource)
+- [github_branch_protection.instance](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection) (resource)
+- [github_repository.instance](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) (resource)
 
 ## Required Inputs
 
@@ -62,6 +78,14 @@ Default: `null`
 ### allow\_squash\_merge
 
 Description: (Optional) Set to true to enable squash merges on the repository. (Default: `false`)
+
+Type: `bool`
+
+Default: `null`
+
+### allow\_update\_branch
+
+Description: (Optional) Set to true to always suggest updating pull request branches.
 
 Type: `bool`
 
@@ -173,12 +197,13 @@ Type:
 
 ```hcl
 object({
-    allow_auto_merge   = optional(bool, false)
-    allow_merge_commit = optional(bool, true)
-    allow_rebase_merge = optional(bool, false)
-    allow_squash_merge = optional(bool, false)
-    archive_on_destroy = optional(bool, true)
-    auto_init          = optional(bool, true)
+    allow_auto_merge    = optional(bool, false)
+    allow_merge_commit  = optional(bool, true)
+    allow_rebase_merge  = optional(bool, false)
+    allow_squash_merge  = optional(bool, false)
+    allow_update_branch = optional(bool, true)
+    archive_on_destroy  = optional(bool, true)
+    auto_init           = optional(bool, true)
     branch_protections = optional(
       list(
         object({
