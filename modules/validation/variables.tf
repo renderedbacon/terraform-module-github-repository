@@ -262,7 +262,7 @@ variable "template" {
 variable "topics" {
   description = "(Optional) The set of topics of the repository.  (Default: `toset([])`)"
   type        = set(string)
-  default     = toset([])
+  default     = []
 }
 
 variable "visibility" {
