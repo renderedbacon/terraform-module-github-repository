@@ -146,7 +146,7 @@ list(
         })
       )
       push_restrictions  = optional(list(string), [])
-      allow_deletiona    = optional(bool, false)
+      allows_deletions   = optional(bool, false)
       allow_force_pushes = optional(bool, false)
       block_creations    = optional(bool, false)
     })
@@ -346,7 +346,7 @@ list(
         }), null
       )
       push_restrictions  = optional(list(string), [])
-      allow_deletiona    = optional(bool, false)
+      allows_deletions   = optional(bool, false)
       allow_force_pushes = optional(bool, false)
       block_creations    = optional(bool, false)
     })

@@ -93,8 +93,8 @@ resource "github_branch_protection" "instance" {
 
   # checkov:skip=CKV_GIT_5:Allow less than 2 approvals for pull requests
   # checkov:skip=CKV_GIT_6:Allow un-signed commits
-  repository_id   = github_repository.instance.node_id
-  pattern         = "main"
-  enforce_admins  = true
-  allow_deletions = false
+  repository_id    = github_repository.instance.node_id
+  pattern          = "main"
+  enforce_admins   = true
+  allows_deletions = false
 }
